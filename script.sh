@@ -5,12 +5,6 @@ echo "Second arg: $2"
 echo "Second arg: $3"
 echo "Second arg: $4"
 
-# if [ "$2" != "" ] && [ "$3" != "" ];
-# then
-# convert "$1" -resize "$2"x"$3" "$4"
-# else
-#   echo "error"
-# fi
 
 while [[ $# -gt 1 ]]
 do
@@ -37,7 +31,6 @@ case $key in
     DEFAULT=YES
     ;;
     *)
-            # unknown option
     ;;
 esac
 shift # past argument or value
@@ -46,6 +39,7 @@ echo INPUT FILE = "${INPUT}"
 echo WIDTH     = "${WIDTH}"
 echo HEIGHT   = "${HEIGHT}"
 echo OUTPUT FILE   = "${OUTPUT}"
+# logic for checking arguments passed to the script
 if [ -z "$WIDTH" ] && [ -z "$HEIGHT"]; then
   echo "HEIGHT is empty and WIDTH is empty. Connot resize"
   exit
